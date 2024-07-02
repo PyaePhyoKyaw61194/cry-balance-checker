@@ -7,6 +7,7 @@ import { FormControlVariant } from "@/enums/form";
 import Input from "../forms/Input";
 import { Button } from "../buttons/Button";
 import { object, string } from "yup";
+import useBalance from "@/hooks/useBalance";
 
 const AddressForm = () => {
   const formikRef = useRef<FormikProps<{
@@ -22,6 +23,7 @@ const AddressForm = () => {
   };
 
   const [isLoading, setIsLoading] = useState(false);
+  const { balance } = useBalance();
 
   const handleSubmit = async (username: string, password: string) => {
     console.log({ username, password });
@@ -40,6 +42,7 @@ const AddressForm = () => {
     username: string().required("username is required"),
     password: string().required("password is required"),
   });
+
   return (
     <div>
       <Formik
