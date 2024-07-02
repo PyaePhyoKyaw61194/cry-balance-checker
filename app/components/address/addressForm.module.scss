@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .containerButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: column-reverse;
+    gap: 8px;
+    color: white;
+
+    .button {
+      width: 100%;
+      height: 40px;
+      border-radius: 4px;
+
+      &.buttonLeft {
+        grid-column: 1/2;
+        grid-row: 1;
+      }
+      &.buttonRight {
+        grid-column: 2/3;
+        grid-row: 1;
+      }
+    }
+  }
+}

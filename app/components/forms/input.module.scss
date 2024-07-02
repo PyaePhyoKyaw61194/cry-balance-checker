@@ -1,0 +1,173 @@
+.input {
+    @apply w-full bg-neutral-50 rounded-[4px] h-[35px] box-border text-neutral-800 border-neutral-10 border-[1px] outline-[0] leading-[19.6px] text-[14px] font-normal;
+  
+    &.mobile {
+      @apply h-[40px];
+    }
+  
+    &.error {
+      @apply border-red-200 border-[1px] bg-neutral-10 outline-[0];
+    }
+  }
+  
+  /* Edge 12-18 */
+  .input::-ms-input-placeholder {
+    @apply text-neutral-500;
+  }
+  
+  .input::placeholder {
+    @apply text-neutral-500;
+  }
+  
+  .input:disabled {
+    @apply bg-neutral-100 text-neutral-400 cursor-not-allowed;
+  }
+  
+  .input-disabled:read-only {
+    @apply bg-neutral-100 text-neutral-400 cursor-not-allowed;
+  }
+  
+  .input-disabled[readonly]:focus {
+    @apply bg-neutral-100 text-neutral-400 cursor-not-allowed border-neutral-10;
+    outline: none;
+  }
+  
+  .input:hover {
+    @apply border-neutral-300 border-[1px] outline-[0];
+  }
+  
+  .input:focus {
+    @apply border-blue-400 border-[1px] bg-neutral-10 outline-[0];
+  }
+  
+  .input:focus-visible {
+    @apply border-blue-400 border-[1px] bg-neutral-10 outline-[0];
+    &.error {
+      @apply border-red-200 border-[1px] bg-neutral-10 outline-[0];
+    }
+  }
+  
+  .inputWrapper {
+    @apply w-full relative;
+  }
+  
+  .inputIcon {
+    @apply w-[20px] h-[20px] absolute top-2 text-neutral-500;
+  
+    &.mobile {
+      @apply top-[10px];
+    }
+  }
+  
+  // Input Button
+  
+  .inputButton {
+    @apply bg-blue-400 w-[100px] h-[27px] absolute top-[4px] right-[8px] text-neutral-10 rounded hover:bg-blue-600 disabled:bg-neutral-500 disabled:text-neutral-10;
+  }
+  
+  .inputSuccessMessage {
+    @apply absolute right-[8px] top-[7px] text-green-200;
+  }
+  
+  // Password Button
+  
+  .showPasswordButton {
+    @apply border-0 outline-1 block absolute w-[20px] h-[20px] top-2 right-2 text-neutral-500;
+  
+    &.mobile {
+      @apply top-[10px];
+    }
+  }
+  
+  // Number
+  
+  /* Chrome, Safari, Edge, Opera */
+  .inputNumber::-webkit-outer-spin-button,
+  .inputNumber::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Firefox */
+  .inputNumber[type='number'] {
+    -moz-appearance: textfield;
+  }
+  
+  .gameLobbySearchInput {
+    @apply w-[352px] h-[40px] border border-neutral-700 bg-neutral-800 pl-10 text-sm leading-5 text-neutral-50;
+  
+    &.mobile {
+      @apply w-full h-[40px] border border-neutral-100 bg-neutral-10 text-neutral-800;
+  
+      &:hover {
+        @apply border-neutral-300;
+      }
+  
+      &:focus,
+      &:focus-visible {
+        @apply bg-neutral-10 border-neutral-300;
+      }
+    }
+  
+    /* Edge 12-18 */
+    &::-ms-input-placeholder,
+    &::placeholder {
+      @apply text-neutral-500;
+    }
+  
+    &:hover {
+      @apply border-neutral-10;
+    }
+  
+    &:focus,
+    &:focus-visible {
+      @apply bg-neutral-800 border-neutral-10;
+    }
+  
+    &::-ms-input-placeholder:focus,
+    &::placeholder:focus {
+      @apply bg-neutral-800 text-neutral-50;
+    }
+  }
+  
+  .gameLobbySearchInputWhite {
+    @apply w-[352px] h-[40px] border border-neutral-100 bg-neutral-10 pl-10 text-sm leading-5 text-neutral-800;
+    // @apply w-[352px] h-[40px] border border-neutral-300 bg-neutral-10 pl-10 text-sm leading-5 text-neutral-500;
+  
+    &.mobile {
+      @apply w-full h-[40px] border border-neutral-100 bg-neutral-10 text-neutral-800;
+  
+      &:hover {
+        @apply border-neutral-300;
+      }
+  
+      &:focus,
+      &:focus-visible {
+        @apply bg-neutral-10 border-neutral-10;
+      }
+    }
+  
+    /* Edge 12-18 */
+    &::-ms-input-placeholder,
+    &::placeholder {
+      @apply text-neutral-500;
+    }
+  
+    &:hover {
+      // @apply border-neutral-10;
+      @apply border-neutral-300;
+    }
+  
+    &:focus,
+    &:focus-visible {
+      // @apply bg-neutral-10 border-neutral-10;
+      @apply bg-neutral-10 border-blue-400;
+    }
+  
+    &::-ms-input-placeholder:focus,
+    &::placeholder:focus {
+      // @apply bg-neutral-10 text-neutral-50;
+      @apply bg-neutral-10 text-neutral-50;
+    }
+  }
+  

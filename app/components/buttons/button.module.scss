@@ -1,0 +1,31 @@
+.button {
+    @apply rounded-[4px] flex justify-center items-center box-border outline-0 disabled:cursor-not-allowed;
+    &Primary {
+      @apply bg-blue-400 text-neutral-10 hover:bg-blue-600 disabled:bg-neutral-500;
+    }
+  
+    &Secondary {
+      @apply bg-orange-400 text-neutral-10 hover:bg-orange-500 disabled:bg-neutral-500;
+    }
+  
+    &Outline {
+      @apply bg-neutral-10 text-neutral-900 hover:bg-neutral-50 border-[2px] border-neutral-300 disabled:bg-neutral-50 disabled:text-neutral-500 disabled:border-neutral-100 focus:bg-neutral-100 focus:text-neutral-500;
+    }
+  }
+  
+  .small {
+    @apply text-[14px] leading-[19.6px] px-[16px] py-[8px] h-[35px] w-[185px];
+  }
+  
+  .medium {
+    @apply text-[14px] leading-[19.6px] px-[16px] py-[11px] h-[40px] w-[185px];
+  }
+  
+  .large {
+    @apply text-[16px] leading-[22.4px] px-[16px] py-[10px] h-[45px] w-[185px];
+  }
+  
+  .mediumMobile {
+    @apply text-[14px] leading-[19.6px] px-[16px] py-[8px] h-[40px] w-[185px];
+  }
+  

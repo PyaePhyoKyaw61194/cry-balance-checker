@@ -1,0 +1,41 @@
+.formControl {
+    @apply flex items-start block w-full mb-[5px] relative text-[14px];
+  }
+  
+  .childrenWrapperClass {
+    @apply w-[260px] min-h-[54px];
+    &.keyboardActive {
+      @apply min-h-[46px];
+    }
+  }
+  
+  .formControlLabel {
+    @apply pr-[16px] text-[14px] w-[100px] min-h-[35px] flex items-center justify-end flex-1 text-right leading-[19px] text-neutral-800 font-normal;
+  }
+  
+  .formControlColumn {
+    @apply flex-col items-stretch block w-full mb-[5px] text-[14px];
+  }
+  
+  .formControlColumn > div {
+    @apply w-full min-h-[41px];
+    &.keyboardActive {
+      @apply min-h-[46px];
+    }
+  }
+  
+  .formControlLabelColumn {
+    @apply text-[14px] mb-[4px] block leading-[19px] text-neutral-800 font-normal;
+  }
+  
+  .formControlHint {
+    @apply text-blue-400 block text-[13px] mb-[4px] mt-[-4px] leading-[18px] font-normal;
+  }
+  
+  .formControlError {
+    @apply text-red-200 block text-[13px] leading-[18px];
+    &.mobile {
+      @apply text-xs;
+    }
+  }
+  
