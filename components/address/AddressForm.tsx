@@ -8,6 +8,7 @@ import Input from "../forms/Input";
 import { Button } from "../buttons/Button";
 import { object, string } from "yup";
 import useBalance from "@/hooks/useBalance";
+import useAddress from "@/hooks/useAddress";
 
 const AddressForm = () => {
   const formikRef = useRef<FormikProps<{
@@ -24,19 +25,20 @@ const AddressForm = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const { balance } = useBalance();
+  const { addAddress } = useAddress();
 
   const handleSubmit = async (username: string, password: string) => {
-    console.log({ username, password });
-    /*  try {
+    try {
       setIsLoading(true);
-      await login(username, password);
-      showToastSuccess("Success");
+      await addAddress(username, password);
+      /*  showToastSuccess("Success");
       router.push(mobileRoute(Routes.HOME));
-      setIsOpenLoginModal(false);
+      setIsOpenLoginModal(false); */
     } catch (error) {
-      handleErrors(error as GenericApiError);
+      /* handleErrors(error as GenericApiError); */
+      console.log(error);
     }
-    setIsLoading(false); */
+    setIsLoading(false);
   };
   const validationsSchema = object({
     username: string().required("username is required"),
