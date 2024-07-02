@@ -10,7 +10,6 @@ export async function POST(req: Request) {
 
   try {
     const csv = parse(body, { header: false });
-    console.log(csv);
     await fs.access(filePath);
     // If the file exists, append to it
     await fs.appendFile(filePath, csv + "\n");

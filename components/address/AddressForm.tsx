@@ -11,11 +11,6 @@ import useBalance from "@/hooks/useBalance";
 import useAddress from "@/hooks/useAddress";
 
 const AddressForm = () => {
-  const formikRef = useRef<FormikProps<{
-    username: string;
-    password: string;
-  }> | null>();
-
   const handleButtonValue = (isLoading: boolean) => {
     if (isLoading) {
       return "Loading...";
@@ -27,22 +22,18 @@ const AddressForm = () => {
   const { balance } = useBalance();
   const { addAddress } = useAddress();
 
-  const handleSubmit = async (username: string, password: string) => {
+  const handleSubmit = async (username: string, address: string) => {
     try {
       setIsLoading(true);
-      await addAddress(username, password);
-      /*  showToastSuccess("Success");
-      router.push(mobileRoute(Routes.HOME));
-      setIsOpenLoginModal(false); */
+      await addAddress(username, address);
     } catch (error) {
-      /* handleErrors(error as GenericApiError); */
       console.log(error);
     }
     setIsLoading(false);
   };
   const validationsSchema = object({
     username: string().required("username is required"),
-    password: string().required("password is required"),
+    address: string().required("address is required"),
   });
 
   return (
@@ -50,13 +41,13 @@ const AddressForm = () => {
       <Formik
         initialValues={{
           username: "",
-          password: "",
+          address: "",
         }}
         validationSchema={validationsSchema}
         validateOnChange
         isInitialValid={false}
         onSubmit={(values) => {
-          handleSubmit(values.username, values.password);
+          handleSubmit(values.username, values.address);
         }}
         validateOnMount={false}
       >
@@ -73,8 +64,8 @@ const AddressForm = () => {
 
           const usernameError =
             ((touched.username || values.username) && errors.username) || "";
-          const passwordError =
-            ((touched.password || values.password) && errors.password) || "";
+          const addressError =
+            ((touched.address || values.address) && errors.address) || "";
           return (
             <Form onSubmit={handleSubmit} autoFocus className={styles.form}>
               <FormControl
@@ -88,7 +79,7 @@ const AddressForm = () => {
                   maxLength={50}
                   autoFocus={false}
                   value={values.username}
-                  autoComplete="current-password"
+                  autoComplete="current-address"
                   placeholder="Please input username"
                   onChange={(e) => setFieldValue("username", e.target.value)}
                   onBlur={() => setFieldTouched("username")}
@@ -99,7 +90,7 @@ const AddressForm = () => {
 
               <FormControl
                 label="address"
-                error={passwordError}
+                error={addressError}
                 align={FormControlVariant.COLUMN}
                 isMobile
               >
@@ -107,13 +98,13 @@ const AddressForm = () => {
                   name="address"
                   maxLength={50}
                   autoFocus={false}
-                  value={values.password}
-                  autoComplete="current-password"
+                  value={values.address}
+                  autoComplete="current-address"
                   placeholder="Please input address"
-                  onChange={(e) => setFieldValue("password", e.target.value)}
-                  onBlur={() => setFieldTouched("password")}
+                  onChange={(e) => setFieldValue("address", e.target.value)}
+                  onBlur={() => setFieldTouched("address")}
                   isMobile={true}
-                  error={Boolean(passwordError)}
+                  error={Boolean(addressError)}
                 />
               </FormControl>
 
